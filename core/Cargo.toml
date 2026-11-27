@@ -1,0 +1,38 @@
+[package]
+name = "relay-core"
+version = "0.1.0"
+edition = "2021"
+description = "Cross-device protocol stack for Android <-> macOS (Nearby Presence LDT, UKEY2, Nearby Connections, DeviceLink, Notification Sync, QuickAccess, Instant Hotspot, Google Presence Sync)"
+license = "MIT"
+repository = "https://github.com/tui2019/Relay"
+
+[lib]
+name = "relay_core"
+path = "src/lib.rs"
+
+[[bin]]
+name = "relay-cli"
+path = "src/main.rs"
+
+[[bin]]
+name = "relay-daemon"
+path = "src/bin/relay_daemon.rs"
+
+[dependencies]
+aes = "0.8"
+base64 = "0.22"
+bytes = "1.7"
+cbc = { version = "0.1", features = ["std"] }
+hex = "0.4"
+hkdf = "0.12"
+hmac = "0.12"
+p256 = { version = "0.13", features = ["ecdh", "arithmetic"] }
+prost = "0.13"
+rand = "0.8"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "http2"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+thiserror = "2.0"
+tokio = { version = "1.40", features = ["full"] }
+uuid = { version = "1.10", features = ["v4"] }

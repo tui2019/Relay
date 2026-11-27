@@ -1,0 +1,18 @@
+# Build artifacts
+core/target/
+bridge/RelayBridge
+bridge/.build/
+app/*.app/
+app/*.appex/
+app/*.entitlements
+
+# Local secrets & credentials (never commit!)
+*credentials*.json
+*account*.json
+*.pem
+*.key
+
+# macOS / Editor
+.DS_Store
+.vscode/
+.idea/
